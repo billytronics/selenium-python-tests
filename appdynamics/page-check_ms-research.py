@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
+import unittest
+
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+from selenium.webdriver.common.by import By
 
 
 class AppDynamicsJob(unittest.TestCase):
@@ -15,7 +13,6 @@ class AppDynamicsJob(unittest.TestCase):
         self.driver = webdriver.Chrome()
         print("instantiated selenium web driver")
         self.driver.implicitly_wait(30)
-        # self.base_url = "https://www.google.com/"
         self.verificationErrors = []
         self.accept_next_alert = True
 
@@ -40,23 +37,6 @@ class AppDynamicsJob(unittest.TestCase):
             self.driver.save_screenshot("ElementNotPresent.png")
             return False
         return True
-
-    # def is_alert_present(self):
-    #     try: self.driver.switch_to_alert()
-    #     except NoAlertPresentException as e:
-    #         return False
-    #     return True
-
-    # def close_alert_and_get_its_text(self):
-    #     try:
-    #         alert = self.driver.switch_to.alert
-    #         alert_text = alert.text
-    #         if self.accept_next_alert:
-    #             alert.accept()
-    #         else:
-    #             alert.dismiss()
-    #         return alert_text
-    #     finally: self.accept_next_alert = True
 
     def tearDown(self):
         self.driver.save_screenshot("FinalScreenshot.png")
