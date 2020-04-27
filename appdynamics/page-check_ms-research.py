@@ -25,8 +25,8 @@ class AppDynamicsJob(unittest.TestCase):
         driver.find_element_by_link_text("Client Login").click()
         print("clicked Client Login")
 
-        self.assertEqual(True, self.is_element_present(By.XPATH, "//a[contains(text(),'Research Portal')]"))
-        driver.find_element_by_xpath("//a[contains(text(),'Research Portal')]").click()
+        self.assertEqual(True, self.is_element_present(By.LINK_TEXT, "Research Portal"))
+        driver.find_element_by_link_text("Research Portal").click()
         print("clicked Research Portal")
 
     def is_element_present(self, how, what):
