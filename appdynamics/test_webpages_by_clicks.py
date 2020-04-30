@@ -12,7 +12,7 @@ class AppDynamicsJob(unittest.TestCase):
         # AppDynamics will automatically override this web driver
         # as documented in https://docs.appdynamics.com/display/PRO44/Write+Your+First+Script
         self.driver = webdriver.Chrome()
-        print("instantiated selenium web driver")
+        print("\n instantiated selenium web driver")
         self.driver.implicitly_wait(30)
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -30,7 +30,7 @@ class AppDynamicsJob(unittest.TestCase):
 
     def click(self, element_type, element_value, friendly_name):
         try:
-            print("attempting to click: " + friendly_name)
+            print("\n attempting to click: " + friendly_name)
             WebDriverWait(self.driver, 30).until(ec.element_to_be_clickable((element_type, element_value))).click()
             print("clicked element: " + friendly_name)
         except Exception as e:
@@ -41,7 +41,7 @@ class AppDynamicsJob(unittest.TestCase):
         self.driver.save_screenshot("final_screenshot.png")
         self.assertEqual([], self.verificationErrors)
         self.driver.quit()
-        print("test completed")
+        print("\n -------- test completed --------")
 
 
 if __name__ == "__main__":
