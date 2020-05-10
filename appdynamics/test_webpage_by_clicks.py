@@ -27,6 +27,7 @@ class AppDynamicsJob(unittest.TestCase):
         self.click(By.ID, "nav-link-accountList", "Account List")
         # Confirm final page is loaded by verifying below element is available:
         self.click(By.NAME, "email", "Email Address")
+        print("loaded url: " + driver.current_url)
 
     def click(self, element_type, element_value, friendly_name):
         try:
