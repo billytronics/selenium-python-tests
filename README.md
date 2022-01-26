@@ -1,4 +1,6 @@
 # selenium-python-tests
+
+[![Git](https://app.soluble.cloud/api/v1/public/badges/5d8d82ce-5571-41b6-a8c1-b1ec31d4a5ac.svg?orgId=649909636767)](https://app.soluble.cloud/repos/details/github.com/billy-yung/selenium-python-tests?orgId=649909636767)  
 Example Python scripts for testing webpages and APIs
 
 ## Introduction
